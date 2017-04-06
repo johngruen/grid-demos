@@ -1,0 +1,49 @@
+@import "lib/normalize";
+
+$bg-color: #f5f5f7;
+$font-color:  #3e3d40;
+$link-color: #009ec0;
+$shadow: rgba(0, 0, 0, 0.1);
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $bg-color;
+  color: $font-color;
+  font-family: "fira sans", sans-serif;
+}
+
+a {
+  color: $link-color;
+}
+
+#grid-example-1 {
+}
+
+#grid-example-2 {
+}
+
+#grid-example-3 {
+}
+
+#grid-example-4 {
+  h1 {
+    background: url(/images/logo.svg) no-repeat left center;
+    background-size: 24px 24px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+    padding-left: 32px;
+  }
+}
+
+
