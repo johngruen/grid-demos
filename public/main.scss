@@ -2,8 +2,6 @@
 
 $bg-color: #f5f5f7;
 $font-color:  #3e3d40;
-$link-color: #009ec0;
-$shadow: rgba(0, 0, 0, 0.1);
 
 html {
   box-sizing: border-box;
@@ -21,29 +19,90 @@ body {
   font-family: "fira sans", sans-serif;
 }
 
-a {
-  color: $link-color;
-}
-
 #grid-example-1 {
-}
 
-#grid-example-2 {
-}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    height: 100vh;
+  }
 
-#grid-example-3 {
-}
+  .grid__unit {
+    background: lime;
+  }
 
-#grid-example-4 {
-  h1 {
-    background: url(/images/logo.svg) no-repeat left center;
-    background-size: 24px 24px;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    margin: 0;
-    padding-left: 32px;
+  .grid__unit:nth-child(odd) {
+    background: salmon;
   }
 }
 
+#grid-example-2 {
+
+  display:none;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas: ". header header"
+                         ". content ."
+                         ". . footer";
+    min-height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+    background: red;
+  }
+
+  section {
+    grid-area: content;
+    height: 4000px;
+    background: blue;
+  }
+
+  footer {
+    grid-area: footer;
+    background: lime;
+  }
+
+}
+
+#grid-example-3 {
+  
+  display: none;
+
+  .grid {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+    grid-template-rows: auto 100px 300px;
+    grid-auto-rows: 200px;
+    grid-gap: 20px 20px;
+    grid-auto-flow: dense;
+  }
+
+  header {
+    grid-column: 1 / -1;
+  }
+
+  .grid__unit {
+    background: lime;
+  }
+
+  .grid__unit:nth-child(3n) {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .grid__unit:nth-child(11n) {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .grid__unit:nth-child(odd) {
+    background: salmon;
+  }
+}
 
